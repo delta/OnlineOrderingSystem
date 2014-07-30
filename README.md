@@ -13,6 +13,7 @@ Install `python2-virtualenv`
 ```
 virtualenv2 flask
 source flask/bin/activate
+pip install -r requirements.txt
 python2 db_create.py
 python2 db_migrate.py
 python2 runserver.py
