@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2 >Admin<h2>
+    
+</div>  
+	<h4 align="center"> Order Data </h4>
+    
+     <form action="{{ url_for('admin') }}" method=post>
+
+  	{% for info in data.iteritems() %}
+	    <h5 align="center" >{{ info[0] }}
+	    {% for val in info[1] %}
+	    	{{ val }}
+	    {% endfor %}
+	
+	<input type="checkbox" name="id" value="{{info[0]}}" />  
+	</h5>
+	{% endfor %}
+	
+    {{ form.submit }}
+  </form>
+{% endblock %}

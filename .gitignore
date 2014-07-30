@@ -1,0 +1,8 @@
+*.pyc
+flask/
+db_repository/
+out/
+*.db
+*.swp
+*.swo
+*.db

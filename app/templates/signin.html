@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <h2>Login</h2>
+   
+  <form action="{{ url_for('signin') }}" method=post>
+    {{ form.hidden_tag() }}
+     
+     
+    {{ form.rollno.label }}    
+    {{ form.rollno }}
+
+     
+    {{ form.password.label }}
+    {{ form.password }}
+     
+    {{ form.submit }}
+  </form>
+     
+{% endblock %}

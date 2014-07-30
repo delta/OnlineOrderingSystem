@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">Delta App</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+	  
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+	  {% if 'rollno' in session %}
+          <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          <li><a href="{{ url_for('signout') }}">Leave</a></li>
+	  {% else %}
+          <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+	  {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </body>
+</html>

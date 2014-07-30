@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2 >Profile<h2>
+    <h3>This is {{ session['rollno'] }}'s profile page<h3>
+</div>  
+	<h4 align="center">HKB Menu </h4>
+  <form action="{{ url_for('confirm') }}" method=post>
+    {{form.order.label}}
+    
+    <input type="checkbox" name="order" value="Chicken" /> Chicken <br/>
+    <input type="checkbox" name="order" value="Beer" /> Beer <br/>
+    <input type="checkbox" name="order" value="Pizza" /> Pizza <br/>
+	
+    {{ form.submit }}
+  </form>
+<h4 id="status">Status of order </h4>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2 >Profile<h2>
+    <h3>This is {{ session['rollno'] }}'s profile page<h3>
+</div>  
+	
+ {% for order in data.order %}
+ 	<h3>{{ order[0] }}</h3>
+ 	<h4 id="status"><center>{{ order[1] }}</center> </h4>
+ {% endfor %}
+
+{% endblock %}
